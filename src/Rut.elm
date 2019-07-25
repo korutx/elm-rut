@@ -1,6 +1,12 @@
 module Rut exposing ( format, computeDv, isValidRut, Formatter(..) )
 
 {-| Formatear, calcular el dígito verificador y probar la validez de un rut
+
+# Types
+@docs Formatter
+
+# Api
+@docs format, computeDv, isValidRut
 -}
 
 import Regex exposing ( fromString )

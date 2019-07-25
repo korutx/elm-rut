@@ -3,7 +3,7 @@
     "name": "korutx/elm-rut",
     "summary": "A component for handling the Chilean Unique Roll Tributary",
     "license": "BSD-3-Clause",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "exposed-modules": [
         "Rut"
     ],
