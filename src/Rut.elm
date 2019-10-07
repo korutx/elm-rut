@@ -75,7 +75,7 @@ splitRutAndDv str =
     clearFormat "11.111.111-1" == "111111111"
 -}   
 clearFormat : String -> String
-clearFormat str = replace "[\\.\\-]" ( \_ -> "" ) str
+clearFormat str = replace "[\\.\\-]" ( \_ -> "" ) str 
     
 replace : String -> ( Regex.Match -> String ) -> String -> String
 replace regexStr replacer str =
@@ -121,4 +121,4 @@ isValidRut minimumLength rut =
         let
             rutdv = splitRutAndDv rut
         in
-        computeDv(justStr rutdv.rut) == justStr rutdv.dv
+        ( computeDv(justStr rutdv.rut) |> String.toLower ) == ( justStr rutdv.dv |> String.toLower )

@@ -12,8 +12,8 @@ suite =
         [ test "Cleared format" <|
             \_ ->
                 let
-                    rutList = [ "111111111", "11.111.111-1", "11111111-1", "", "1", "K", "1-1" ]
-                    cleared = [ "111111111", "111111111", "111111111", "", "1", "K", "11" ]
+                    rutList = [ "111111111", "11.111.111-1", "33916942-K", "", "1", "K", "1-1" ]
+                    cleared = [ "111111111", "111111111", "33916942K", "", "1", "K", "11" ]
                     justCleared = List.map ( \c -> Just c ) cleared
                 in
                 Expect.equal justCleared ( List.map ( \rut -> format Cleared rut ) rutList )
@@ -30,8 +30,8 @@ suite =
         , test "Thousands Format" <|
             \_ ->
                 let
-                    rutList = [ "111111111", "11.111.111-1", "11111111-1", "", "1", "K", "1-1" ]
-                    cleared = [ "11.111.111-1", "11.111.111-1", "11.111.111-1", "", "1", "K", "1-1" ]
+                    rutList = [ "111111111", "11.111.111-1", "33.916.942-k", "", "1", "K", "1-1" ]
+                    cleared = [ "11.111.111-1", "11.111.111-1", "33.916.942-k", "", "1", "K", "1-1" ]
                     justCleared = List.map ( \c -> Just c ) cleared
                 in
                 Expect.equal justCleared ( List.map ( \rut -> format ThousandsSeparated rut ) rutList )
@@ -50,7 +50,7 @@ suite =
             \_ ->
                 let
                     rutList = [ "24952044-6", "11111111-1", "44.444.444-4", "33.916.942-k", "1.773.599-0", "7588158-4", 
-                                "12432815-2", "15985120-6", "17566826-8", "19992589-k", "30027608-3", "32869435-2", 
+                                "12432815-2", "15985120-6", "17566826-8", "19992589-K", "30027608-3", "32869435-2", 
                                 "33344065-2", "39191587-5", "39872491-7", "1-1" ]
                     cleared = [ 
                         True, True, True, True, False, True, True, True, True, True, True, True, True, False, True, 
